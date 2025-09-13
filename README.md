@@ -53,7 +53,8 @@ start index.html  # Windows
 ## Live Demo
 
 The Lamborghini Invencible Homepage is live on **GitHub Pages**:
-[https://vedashreeee.github.io/Lamborghini\_Launching\_Page\_Demo/](https://vedashreeee.github.io/Lamborghini_Launching_Page_Demo/)
+[**LIVE SITE**](https://vedashreeee.github.io/Lamborghini_Launching_Page_Demo/)
+
 
 ---
 
