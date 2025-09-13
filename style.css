@@ -1,0 +1,329 @@
+/* ---------------- RESET ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+/* ---------------- NAVBAR ---------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 35px;
+  width: auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-text {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  background: linear-gradient(45deg, #8b0000, #b22222, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-size: 200% 200%;
+  animation: logoGradientShift 8s ease-in-out infinite;
+}
+
+@keyframes logoGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+}
+
+.nav-links a::before,
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, #8b0000, #ffd700, #b22222);
+  transition: width 0.4s ease;
+}
+
+.nav-links a::before { bottom: 0; left: 0; }
+.nav-links a::after { top: 0; right: 0; }
+
+.nav-links a:hover::before,
+.nav-links a:hover::after {
+  width: 100%;
+  box-shadow: 0 0 15px #ffd700, 0 0 30px #b22222;
+}
+
+/* ---------------- HERO ---------------- */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  background: url('car.png') no-repeat center center/cover fixed;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content, .hero-img {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title { font-family: 'Cinzel Decorative', serif; /* luxury aesthetic font */ font-size: 5rem; font-weight: 800; background: linear-gradient(90deg, #ff1a1a, #ff4d4d, #ff944d, #ffd700); /* deep red → bright red → fiery orange → gold */ -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 4px; text-transform: uppercase; background-size: 300% 300%; animation: gradientFire 5s ease infinite; text-shadow: 0px 0px 15px rgba(255, 50, 50, 0.6); /* glowing red aura */ } /* Animate gradient like flowing fire */ @keyframes gradientFire { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }.hero-content p {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  font-weight: 500;
+  background: linear-gradient(120deg, #ffd700, #ffffff, #ffb347, #b22222);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 250% 250%;
+  animation: metallicShine 6s ease-in-out infinite;
+  letter-spacing: 1px;
+}
+
+@keyframes metallicShine {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-img img {
+  width: 600px;
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* ---------------- CTA BUTTON ---------------- */
+.cta {
+  padding: 0.8rem 2.2rem;
+  border: none;
+  border-radius: 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #f5f5f5;
+  background: linear-gradient(135deg, #8b0000, #b22222, #ffd700, #8b0000);
+  background-size: 400% 400%;
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, transparent, rgba(255, 215, 0, 0.4), transparent);
+  transform: rotate(25deg);
+  animation: shine 4s infinite;
+}
+
+@keyframes shine {
+  0%   { transform: translateX(-100%) rotate(25deg); }
+  50%  { transform: translateX(100%) rotate(25deg); }
+  100% { transform: translateX(-100%) rotate(25deg); }
+}
+
+.cta:hover {
+  background: #b22222;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ffd700, 0 0 40px #b22222;
+}
+
+/* ---------------- FEATURES ---------------- */
+.features {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: #111;
+}
+
+.features h2 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #8b0000, #b22222, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: highlightGradient 6s ease-in-out infinite;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+
+@keyframes highlightGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.feature-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Base feature card */
+.feature {
+  position: relative;
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  max-width: 320px;
+  width: 100%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: #fff;
+  font-weight: 500;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Background images */
+.feature.performance {
+  background: url("images/performance.png") no-repeat center/cover;
+}
+.feature.technology {
+  background: url("images/technology.png") no-repeat center/cover;
+}
+.feature.design {
+  background: url("images/design.png") no-repeat center/cover;
+}
+
+/* Dark overlay for readability */
+.feature::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: -1;
+  border-radius: 15px;
+}
+
+/* Feature headings with gradient */
+.feature h3 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #8b0000, #ffd700, #b22222);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.feature:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.8), 0 0 50px rgba(178, 34, 34, 0.8);
+}
+
+/* ---------------- SHOWCASE ---------------- */
+.showcase {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: #000;
+}
+
+.showcase h2 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(45deg, #8b0000, #ffd700, #b22222);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.showcase-img img {
+  width: 80%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(230, 57, 70, 0.6);
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+  background: #111;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-content p {
+  color: #aaa;
+}
+
+.socials a {
+  margin-left: 1rem;
+  color: #ffd700;
+  text-decoration: none;
+}
+
+/* ---------------- ANIMATIONS ---------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
